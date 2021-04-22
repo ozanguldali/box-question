@@ -34,10 +34,16 @@ public class BoxService {
         if ( boxValue != null && !boxValue.equals("")) {
 
             if (boxValue.startsWith("0") && boxValue.length() > 1)
-                if (boxValue.equals("0.0"))
-                    return new ResponseModel( "yes" );
-                else
+                try {
+                    float value = Float.parseFloat(boxValue);
+                    if (value == 0)
+                        return new ResponseModel( "yes" );
+                    else
+                        return new ResponseModel( "no" );
+                } catch (Exception e) {
+                    logger.trace( "Value is not matched, hence default error will be performed." );
                     return new ResponseModel( "no" );
+                }
             else
                 boxValue = boxValue.trim();
 
