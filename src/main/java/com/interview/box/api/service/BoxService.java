@@ -34,9 +34,15 @@ public class BoxService {
         if ( boxValue != null && !boxValue.equals("")) {
 
             if (boxValue.startsWith("0") && boxValue.length() > 1)
-                return new ResponseModel( "no" );
+                if (boxValue.equals("0.0"))
+                    return new ResponseModel( "yes" );
+                else
+                    return new ResponseModel( "no" );
             else
                 boxValue = boxValue.trim();
+
+            if ("avcr".contains(boxValue))
+                return new ResponseModel( "yes" );
 
             try {
                 float value = Float.parseFloat(boxValue);
