@@ -53,7 +53,11 @@
                     <goal>test</goal>
                 </goals>
                 <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
                     <!--<suiteXmlFiles></suiteXmlFiles>-->
+                    <reportsDirectory>target/surefire-reports</reportsDirectory>
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
                     <threadCount>15</threadCount>
