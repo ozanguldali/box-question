@@ -8,6 +8,8 @@ import org.jsoup.nodes.Document;
 import java.io.File;
 import java.io.IOException;
 
+import static util.LoggerUtil.logger;
+
 public class HtmlParser {
 
     private static final String PROJECT_DIR = System.getProperty("user.dir");
@@ -35,6 +37,8 @@ public class HtmlParser {
     }
 
     public static Document parseErrorPage() {
+
+        logger.error( "Parsing Error Page\t" );
 
         String htmlString = convertHtmlFileToString( ERROR_PAGE );
 

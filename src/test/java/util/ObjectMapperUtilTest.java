@@ -10,21 +10,21 @@ public class ObjectMapperUtilTest {
 
     @Before
     public void setUp() throws Exception {
-        System.out.println("Set Up");
+        System.out.println("Set Up ObjectMapperUtilTest");
     }
 
     @After
     public void tearDown() throws Exception {
-        System.out.println("Tear Down");
+        System.out.println("Tear Down ObjectMapperUtilTest");
     }
 
     @Test
     public void beautifyJsonToString() {
-        System.out.println("Test 1");
+        System.out.println("ObjectMapperUtilTest beautifyJsonToString");
     }
 
     @Test
     public void beautifyFormToJson() {
-        System.out.println("Test 2");
+        System.out.println("ObjectMapperUtilTest beautifyFormToJson");
     }
 }
